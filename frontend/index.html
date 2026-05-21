@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farming - Crop Disease Detection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>🌾 Smart Farming</h1>
+                <p>AI-Powered Crop Disease Detection</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section">
+                <h2>Upload Crop Image</h2>
+                <div class="upload-area" id="uploadArea">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Drag and drop your image here or click to browse</p>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                </div>
+                <button id="analyzeBtn" class="btn-primary" disabled>Analyze Image</button>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display:none;">
+                <h2>Detection Results</h2>
+                <div class="result-card">
+                    <div class="result-image">
+                        <img id="resultImage" src="" alt="Uploaded image">
+                    </div>
+                    <div class="result-info">
+                        <div class="disease-name" id="diseaseName">-</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidenceFill" style="width: 0%"></div>
+                            <span id="confidenceText">0%</span>
+                        </div>
+                        <div class="predictions" id="predictions"></div>
+                    </div>
+                </div>
+
+                <div class="recommendations" id="recommendations"></div>
+            </div>
+
+            <div class="history-section">
+                <h2>Recent Detections</h2>
+                <div id="historyContainer" class="history-grid"></div>
+            </div>
+
+            <div class="statistics-section">
+                <h2>Statistics</h2>
+                <div id="statsContainer" class="stats-grid"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
